@@ -30,7 +30,7 @@ class ContactPage extends StatelessWidget {
                 <_ContactCategory>[
                   _buildPhoneCategory(),
                   _buildCategory(Icons.location_on, Icons.map,
-                                <String>[_contact.location.street, _contact.location.city]),
+                                <String>[_contact.location.street.number.toString(), _contact.location.street.name, _contact.location.city]),
                   _buildCategory(Icons.contact_mail, Icons.email, <String>[_contact.email]),
                   _buildCategory(Icons.today, Icons.add_alert,
                     <String>["Birthday ${_contact.birthday}"]),

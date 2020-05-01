@@ -31,14 +31,22 @@ class Contact {
 }
 
 class Location {
-  final String street;
+  final Street street;
   final String city;
 
   const Location({this.street, this.city});
 
-  Location.fromMap(Map<String, dynamic>  map) :
-                    street = map['street'],
-                    city = map['city'];
+  Location.fromMap(Map<String, dynamic> map)
+      : street = new Street(
+            number: map['street']['number'], name: map['street']['name']),
+        city = map['city'];
+}
+
+class Street {
+  final int number;
+  final String name;
+
+  const Street({this.number, this.name});
 }
 
 class Phone {
