@@ -27,8 +27,9 @@ class ContactPage extends StatelessWidget {
               delegate: SliverChildListDelegate(<_ContactCategory>[
             _buildPhoneCategory(),
             _buildCategory(Icons.location_on, Icons.map, <String>[
-              _contact.location.street.number.toString(),
-              _contact.location.street.name,
+              _contact.location.street.number.toString() +
+                  ' ' +
+                  _contact.location.street.name,
               _contact.location.city
             ]),
             _buildCategory(
